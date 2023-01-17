@@ -1,4 +1,5 @@
-let submit=document.querySelector(".submit");
+//jshint esversion:6
+let submit = document.querySelector( ".submit" );
 submit.addEventListener('click',()=>{
     var output=document.querySelector(".output");
    //storing the data in objects getting from form
@@ -11,31 +12,31 @@ submit.addEventListener('click',()=>{
         skill: document.getElementById("skills").value
     };
     //Card Template
-    if(data.name=="" &&
-        data.email=="" &&
-        data.web=="" &&
-        data.img=="" &&
-        data.gender=="Select" &&
+    if(data.name=="" ||
+        data.email=="" ||
+        data.web=="" ||
+        data.img=="" ||
+        data.gender=="Select" ||
         data.skill==""   
         ){
-        alert("all fields are required....");
+        alert("All Fields are required....");
     }
     else{
         let newlist=document.createElement('tr');
-        newlist.innerHTML=`
+        newlist.innerHTML = `
         <td class="desc-area">
             <ul type="none">
-                <li>${data.name}</li>
-                <li>${data.gender}</li>
-                <li>${data.email}</li>
-                <li>${data.web}</li>
-                <li>${data.skill}</li>
+                <li>${ data.name }</li>
+                <li>${ data.gender }</li>
+                <li>${ data.email }</li>
+                <li>${ data.web }</li>
+                <li>${ data.skill }</li>
             </ul>
         </td>
         <td class="image-area">
-            <img class="image-size" src="${data.img}" alt="Image not found.">
+            <img class="image-size" src="${ data.img }" alt="Image not found.">
         </td>
-        `
+        `;
         output.appendChild(newlist);
     }
 });
